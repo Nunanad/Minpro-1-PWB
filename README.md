@@ -1,3 +1,6 @@
+## Nama : Nanda Pesona Putri
+## NIM : 2409116101
+
 # Personal Portfolio Website
 
 Website ini merupakan project portfolio berbasis HTML dan CSS dengan Bootstrap 5 dan Vue JS untuk meningkatkan tampilan dan struktur kode.
@@ -191,7 +194,6 @@ Elemen `<p>` digunakan untuk menampilkan informasi singkat mengenai latar belaka
 
 ## Section Experience
 
-
 ### Tampilan
 
 <img width="1880" height="901" alt="image" src="https://github.com/user-attachments/assets/58524443-6a99-4aec-a0df-ebb9a3f788b4" />
@@ -200,50 +202,221 @@ Elemen `<p>` digunakan untuk menampilkan informasi singkat mengenai latar belaka
 
 <img width="1167" height="477" alt="image" src="https://github.com/user-attachments/assets/0da3a0b7-1065-4a01-a163-f905aadaaccf" />
 
+Judul section ditampilkan menggunakan heading:
+
+```html
+<h5 class="mt-5 mb-4">Experience</h5>
+```
+
+- `mt-5` → memberikan margin atas.
+- `mb-4` → memberikan margin bawah.
+- Digunakan sebagai penanda awal bagian pengalaman.
+
+---
+
+### Layout Grid
+
+Section menggunakan sistem grid Bootstrap:
+
+```html
+<div class="row">
+```
+
+- `row` berfungsi sebagai pembungkus baris.
+- Setiap pengalaman ditempatkan dalam kolom terpisah agar tersusun rapi.
+
+---
+
+### Experience Card Structure
+
+Setiap item pengalaman menggunakan struktur berikut:
+
+```html
+<div class="col-md-6 mb-3">
+    <div class="exp-card p-3">
+        <h6>Judul Pengalaman</h6>
+        <small>Tahun</small>
+        <p>Deskripsi singkat pengalaman</p>
+    </div>
+</div>
+```
+
+Penjelasan class yang digunakan:
+
+- `col-md-6` → Membagi layout menjadi 2 kolom pada layar ukuran medium ke atas.
+- `mb-3` → Memberikan jarak antar card.
+- `exp-card` → Class custom untuk styling kartu pengalaman.
+- `p-3` → Memberikan padding di dalam card.
+  
 ---
 
 ## Section Certificates
 
 ### Tampilan
-- Layout grid 3 kolom
-- Menggunakan card dengan gambar sertifikat
-- Hover effect modern
-- Background soft pink
+
+<img width="1898" height="910" alt="image" src="https://github.com/user-attachments/assets/20aa635f-56af-434c-b167-161450f8932f" />
+
 
 ### Penjelasan Code
-- Menggunakan Bootstrap Grid (`col-md-4`)
-- Card custom dengan class `.cert-card`
-- Gambar menggunakan `object-fit: cover`
-- Responsif mengikuti sistem grid Bootstrap
+
+<img width="1164" height="574" alt="image" src="https://github.com/user-attachments/assets/7d69ba03-8900-4ece-9807-2576e8ecc412" />
+
+Section diawali dengan elemen:
+
+```html
+<section id="certificates" class="cert-section py-5">
+```
+
+Penjelasan atribut:
+
+- `id="certificates"` → Digunakan sebagai anchor untuk navigasi (misalnya dari navbar dengan link `#certificates`).
+- `cert-section` → Class custom untuk styling khusus bagian sertifikat.
+- `py-5` → Utility class Bootstrap untuk memberikan padding vertikal.
+
+---
+
+### Container dan Judul
+
+```html
+<div class="container">
+    <h2 class="section-title text-center mb-5">Sertifikat</h2>
+</div>
+```
+
+- `container` → Membatasi lebar konten agar tetap rapi dan responsif.
+- `section-title` → Class custom untuk styling judul.
+- `text-center` → Membuat teks rata tengah.
+- `mb-5` → Memberikan margin bawah agar terdapat jarak dengan konten berikutnya.
+
+---
+
+### Layout Grid
+
+```html
+<div class="row">
+```
+
+- `row` → Digunakan sebagai pembungkus sistem grid Bootstrap.
+- Setiap sertifikat ditempatkan dalam kolom terpisah agar tersusun sejajar.
+
+---
+
+### Struktur Card Sertifikat
+
+Setiap sertifikat menggunakan struktur berikut:
+
+```html
+<div class="col-md-4 mb-4">
+    <div class="cert-card">
+        <img src="images/filename.jpg" class="cert-img" alt="Certificate">
+        <div class="p-3">
+            <h6>Nama Sertifikat</h6>
+            <p>Deskripsi sertifikat</p>
+        </div>
+    </div>
+</div>
+```
+
+Penjelasan class:
+
+- `col-md-4` → Membagi layout menjadi 3 kolom pada layar ukuran medium ke atas.
+- `mb-4` → Memberikan jarak antar card.
+- `cert-card` → Class custom untuk desain card sertifikat.
+- `cert-img` → Class custom untuk mengatur tampilan gambar sertifikat.
+- `p-3` → Memberikan padding pada bagian deskripsi.
 
 ---
 
 ## Navbar
 
 ### Tampilan
-- Fixed top navigation
-- Smooth scroll ke setiap section
-- Responsive collapse menu pada tampilan mobile
+
+<img width="1898" height="69" alt="image" src="https://github.com/user-attachments/assets/13ffa760-1c96-4feb-8a69-5ebb528928b0" />
+
 
 ### Penjelasan Code
-- Menggunakan komponen `navbar` Bootstrap 5
-- Link menggunakan anchor ke ID section (`#home`, `#about`, `#certificates`)
-- Smooth scroll menggunakan `scroll-behavior: smooth;` di CSS
+
+<img width="1093" height="614" alt="image" src="https://github.com/user-attachments/assets/ed3795e8-0fc6-4ccf-9803-f96d478f88d5" />
+
+Navbar diawali dengan elemen:
+
+```html
+<nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+```
+
+Penjelasan class yang digunakan:
+
+- `navbar` → Class dasar komponen navbar Bootstrap.
+- `navbar-expand-lg` → Navbar akan dalam keadaan collapse (hamburger menu) pada layar kecil dan melebar penuh pada layar ukuran large (≥992px).
+- `navbar-light` → Skema warna terang.
+- `fixed-top` → Navbar akan tetap berada di bagian atas saat halaman di-scroll.
+- `custom-navbar` → Class tambahan untuk styling kustom.
 
 ---
 
-## 🦶 Footer
+### Container
 
-### ✨ Tampilan
-- Background soft pink
-- Text copyright
-- Tema konsisten dengan warna utama website
+```html
+<div class="container">
+```
 
-### 💻 Penjelasan Code
-- Menggunakan `<footer>` sederhana
-- Styling diatur di `style.css`
+Digunakan untuk menjaga tata letak navbar tetap rapi dan responsif.
 
 ---
+
+### Brand / Logo
+
+```html
+<a class="navbar-brand fw-bold" href="#home">NaN</a>
+```
+
+- `navbar-brand` → Digunakan untuk menampilkan nama brand atau logo website.
+- `fw-bold` → Membuat teks menjadi tebal.
+- `href="#home"` → Mengarahkan ke section dengan id `home`.
+
+---
+
+### Navbar Toggler (Hamburger Menu)
+
+```html
+<button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+</button>
+```
+
+Digunakan untuk menampilkan tombol menu pada perangkat dengan layar kecil.
+
+- `data-bs-toggle="collapse"` → Mengaktifkan fitur collapse Bootstrap.
+- `data-bs-target="#navbarNav"` → Menentukan target elemen yang akan dibuka/ditutup.
+
+---
+
+### Menu Navigasi
+
+```html
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+```
+
+- `collapse navbar-collapse` → Mengaktifkan fitur collapse untuk menu.
+- `ms-auto` → Menggeser menu ke sisi kanan navbar.
+
+---
+
+### Item Menu
+
+Contoh struktur item menu:
+
+```html
+<li class="nav-item">
+    <a class="nav-link" href="#home">Beranda</a>
+</li>
+```
+
+---
+
 
 ### ✔ Bootstrap 5
 Digunakan untuk:
@@ -255,14 +428,9 @@ Digunakan untuk:
 - Responsive design
 
 ### ✔ Vue JS
-Digunakan untuk:
-- Interpolation `{{ }}`
-- Struktur `data()`
-- Mounting dengan `.mount('#app')`
+<img width="567" height="205" alt="image" src="https://github.com/user-attachments/assets/638645b0-4df6-45d7-9eb1-4b037af11f49" />
+
 
 Walaupun data masih bersifat statis, struktur website sudah menggunakan konsep modern reactive system.
 
 ---
-
-### Dokumentasi
-
